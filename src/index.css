@@ -37,8 +37,9 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  opacity: 0.8;
 }
 
 @media (prefers-color-scheme: light) {

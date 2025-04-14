@@ -5,6 +5,10 @@ import "../App.css";
 const FollowCard = ({ userName, children, initialIsFollowing }) => {
   const [isFollowing, setIsFollowing] = useState(initialIsFollowing);
   const buttonText = isFollowing ? "Following" : "Follow";
+  const unfollowButtonText = "Unfollow";
+  const buttonClass = isFollowing
+    ? "followingCard-button"
+    : "followCard-button";
 
   const handleFollow = () => {
     setIsFollowing(!isFollowing);
@@ -23,8 +27,9 @@ const FollowCard = ({ userName, children, initialIsFollowing }) => {
         </div>
       </header>
       <aside>
-        <button className="followCard-button" onClick={handleFollow}>
-          {buttonText}
+        <button className={buttonClass} onClick={handleFollow}>
+          <span className="followCard-follow-text">{buttonText}</span>
+          <span className="followCard-unfollow-text">{unfollowButtonText}</span>
         </button>
       </aside>
     </article>
